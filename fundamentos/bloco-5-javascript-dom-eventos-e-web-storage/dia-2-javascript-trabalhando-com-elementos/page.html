@@ -94,6 +94,27 @@
       smallImg.className = 'small-image';
       smallImg.src = 'https://picsum.photos/200';
       document.querySelector('.left-content').appendChild(smallImg);
+
+      // Q8
+      let uLst = document.createElement('ul');
+      let lstItems = [
+        'um',
+        'dois',
+        'três',
+        'quatro',
+        'cinco',
+        'seis',
+        'sete',
+        'oito',
+        'nove',
+        'dez'
+      ];
+      let lstItem
+      for (let i = 0; i < lstItems.length; i += 1) {
+        lstItem = document.createElement('li');
+        lstItem.innerHTML = lstItems[i];
+        document.querySelector('.right-content').appendChild(lstItem);
+      }
       </script>
   </body>
 </html>

@@ -113,6 +113,7 @@
       for (let i = 0; i < lstItems.length; i += 1) {
         lstItem = document.createElement('li');
         lstItem.innerHTML = lstItems[i];
+        lstItem.className = 'list-item';
         document.querySelector('.right-content').appendChild(lstItem);
       }
 
@@ -140,6 +141,16 @@
 
       // EQ5
       document.querySelector('.center-content').parentElement.style.backgroundColor= 'green';
+
+      // EQ6
+      let lstItemFilter = document.querySelectorAll('.list-item');
+      for (let i = 0; i < lstItemFilter.length; i += 1) {
+        let item = lstItemFilter[i];
+
+        if (item.innerHTML.includes('nove') || item.innerHTML.includes('dez')) {
+          rightSection.removeChild(item);
+        }
+      }
     </script>
   </body>
 </html>

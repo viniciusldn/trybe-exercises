@@ -68,11 +68,17 @@
 
       let centerSection = document.createElement('section');
       centerSection.className = 'center-content';
-      document.body.lastChild.appendChild(centerSection);
+      // document.body.lastChild.appendChild(centerSection);
+      document.querySelector('.main-content').appendChild(centerSection);
 
       let paragraph = document.createElement('p');
       paragraph.innerHTML = 'Algum texto';
       document.querySelector('.center-content').appendChild(paragraph);
+
+      let leftSection = document.createElement('section');
+      leftSection.className = 'left-content';
+      document.querySelector('.main-content').appendChild(leftSection);
+
       </script>
   </body>
 </html>

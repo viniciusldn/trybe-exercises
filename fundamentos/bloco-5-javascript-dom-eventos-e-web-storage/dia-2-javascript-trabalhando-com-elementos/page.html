@@ -58,27 +58,36 @@
   <body>
     <script>
       // COLOQUE SEU CÓDIGO AQUI
+      // Q1
       let titleOne = document.createElement('h1');
       titleOne.innerHTML = 'Exercício 5.2 - JavaScript DOM';
       document.body.appendChild(titleOne);
 
+      // Q2
       let mainContent = document.createElement('main');
       mainContent.className = 'main-content';
       document.body.appendChild(mainContent);
 
+      // Q3
       let centerSection = document.createElement('section');
       centerSection.className = 'center-content';
       // document.body.lastChild.appendChild(centerSection);
       document.querySelector('.main-content').appendChild(centerSection);
 
+      // Q4
       let paragraph = document.createElement('p');
       paragraph.innerHTML = 'Algum texto';
       document.querySelector('.center-content').appendChild(paragraph);
 
+      // Q5
       let leftSection = document.createElement('section');
       leftSection.className = 'left-content';
       document.querySelector('.main-content').appendChild(leftSection);
 
+      // Q6
+      let rightSection = document.createElement('section');
+      rightSection.className = 'right-content';
+      document.querySelector('.main-content').appendChild(rightSection);
       </script>
   </body>
 </html>

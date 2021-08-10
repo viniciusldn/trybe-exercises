@@ -61,7 +61,6 @@
       // Q1
       let titleOne = document.createElement('h1');
       titleOne.innerHTML = 'Exercício 5.2 - JavaScript DOM';
-      titleOne.className = 'title';
       document.body.appendChild(titleOne);
 
       // Q2
@@ -124,6 +123,20 @@
       document.querySelector('.main-content').appendChild(titleThreeB);
       let titleThreeC = document.createElement('h3');
       document.querySelector('.main-content').appendChild(titleThreeC);
-      </script>
+
+      // EQ1
+      titleOne.className = 'title';
+
+      // EQ2
+      for(let i = 0; i < document.querySelectorAll('h3').length; i++) {
+        document.querySelectorAll('h3')[i].className = 'description';
+      }
+
+      // EQ3
+      document.querySelector('.main-content').removeChild(leftSection);
+
+      // EQ4
+      document.querySelector('.right-content').style.margin = 'auto';
+    </script>
   </body>
 </html>

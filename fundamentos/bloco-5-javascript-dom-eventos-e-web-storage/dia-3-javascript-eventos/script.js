@@ -27,3 +27,12 @@ function createDay() {
 }
 
 createDay();
+
+function holidays(feriados) {
+  let btnHoliday = document.createElement('button');
+  btnHoliday.innerText = feriados;
+  btnHoliday.id = 'btn-holiday';
+  document.querySelector('.buttons-container').appendChild(btnHoliday)
+}
+
+holidays('Feriados');

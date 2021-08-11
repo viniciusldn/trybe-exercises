@@ -28,11 +28,25 @@ function createDay() {
 
 createDay();
 
-function holidays(feriados) {
+//Q2
+function holidays(string) {
   let btnHoliday = document.createElement('button');
-  btnHoliday.innerText = feriados;
+  btnHoliday.innerText = string;
   btnHoliday.id = 'btn-holiday';
   document.querySelector('.buttons-container').appendChild(btnHoliday)
 }
 
 holidays('Feriados');
+
+//Q3
+
+document.querySelector('#btn-holiday').addEventListener('click', function() {
+  let holidays = document.querySelectorAll('.holiday');
+  for (let i = 0; i < holidays.length; i += 1) {
+    if (holidays[i].style.backgroundColor != 'lightgreen') {
+      holidays[i].style.backgroundColor = 'lightgreen';
+    } else {
+      holidays[i].style.backgroundColor = null;
+    }
+  }
+});

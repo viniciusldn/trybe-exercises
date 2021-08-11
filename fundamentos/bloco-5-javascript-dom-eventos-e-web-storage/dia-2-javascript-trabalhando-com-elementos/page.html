@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // COLOQUE SEU CÓDIGO AQUI
+      // Q1
+      let titleOne = document.createElement('h1');
+      titleOne.innerHTML = 'Exercício 5.2 - JavaScript DOM';
+      document.body.appendChild(titleOne);
+
+      // Q2
+      let mainContent = document.createElement('main');
+      mainContent.className = 'main-content';
+      document.body.appendChild(mainContent);
+
+      // Q3
+      let centerSection = document.createElement('section');
+      centerSection.className = 'center-content';
+      // document.body.lastChild.appendChild(centerSection);
+      document.querySelector('.main-content').appendChild(centerSection);
+
+      // Q4
+      let paragraph = document.createElement('p');
+      paragraph.innerHTML = 'Algum texto';
+      document.querySelector('.center-content').appendChild(paragraph);
+
+      // Q5
+      let leftSection = document.createElement('section');
+      leftSection.className = 'left-content';
+      document.querySelector('.main-content').appendChild(leftSection);
+
+      // Q6
+      let rightSection = document.createElement('section');
+      rightSection.className = 'right-content';
+      document.querySelector('.main-content').appendChild(rightSection);
+
+      // Q7
+      let smallImg = document.createElement('img');
+      smallImg.className = 'small-image';
+      smallImg.src = 'https://picsum.photos/200';
+      document.querySelector('.left-content').appendChild(smallImg);
+
+      // Q8
+      let uLst = document.createElement('ul');
+      let lstItems = [
+        'um',
+        'dois',
+        'três',
+        'quatro',
+        'cinco',
+        'seis',
+        'sete',
+        'oito',
+        'nove',
+        'dez'
+      ];
+      let lstItem
+      for (let i = 0; i < lstItems.length; i += 1) {
+        lstItem = document.createElement('li');
+        lstItem.innerHTML = lstItems[i];
+        lstItem.className = 'list-item';
+        document.querySelector('.right-content').appendChild(lstItem);
+      }
+
+      // Q9
+      let titleThreeA = document.createElement('h3');
+      document.querySelector('.main-content').appendChild(titleThreeA);
+      let titleThreeB = document.createElement('h3');
+      document.querySelector('.main-content').appendChild(titleThreeB);
+      let titleThreeC = document.createElement('h3');
+      document.querySelector('.main-content').appendChild(titleThreeC);
+
+      // EQ1
+      titleOne.className = 'title';
+
+      // EQ2
+      for(let i = 0; i < document.querySelectorAll('h3').length; i++) {
+        document.querySelectorAll('h3')[i].className = 'description';
+      }
+
+      // EQ3
+      document.querySelector('.main-content').removeChild(leftSection);
+
+      // EQ4
+      document.querySelector('.right-content').style.margin = 'auto';
+
+      // EQ5
+      document.querySelector('.center-content').parentElement.style.backgroundColor= 'green';
+
+      // EQ6
+      let lstItemFilter = document.querySelectorAll('.list-item');
+      for (let i = 0; i < lstItemFilter.length; i += 1) {
+        let item = lstItemFilter[i];
+
+        if (item.innerHTML.includes('nove') || item.innerHTML.includes('dez')) {
+          rightSection.removeChild(item);
+        }
+      }
+    </script>
+  </body>
+</html>

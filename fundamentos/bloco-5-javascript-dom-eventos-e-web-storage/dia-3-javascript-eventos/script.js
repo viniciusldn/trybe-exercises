@@ -39,7 +39,6 @@ function holidays(string) {
 holidays('Feriados');
 
 //Q3
-
 document.querySelector('#btn-holiday').addEventListener('click', function() {
   let holidays = document.querySelectorAll('.holiday');
   for (let i = 0; i < holidays.length; i += 1) {
@@ -50,3 +49,13 @@ document.querySelector('#btn-holiday').addEventListener('click', function() {
     }
   }
 });
+
+//Q4
+function fridays(string) {
+  let btnFridays = document.createElement('button');
+  btnFridays.innerText = string;
+  btnFridays.id = 'btn-holiday';
+  document.querySelector('.buttons-container').appendChild(btnFridays)
+}
+
+fridays('Sexta-feira');

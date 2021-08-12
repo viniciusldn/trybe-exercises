@@ -95,3 +95,8 @@ function zoomOut(element) {
 
 monthDays.addEventListener('mouseover', zoomOver);
 monthDays.addEventListener('mouseout', zoomOut);
+
+// Q7
+let newTask = document.createElement('span');
+newTask.className = 'new-task';
+document.querySelector('.my-tasks').appendChild(newTask);

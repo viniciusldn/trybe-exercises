@@ -76,3 +76,22 @@ function changeFridays() {
 }
 
 document.querySelector('#btn-friday').addEventListener('click', changeFridays);
+
+// Q6
+let monthDays = document.getElementById('days');
+
+function zoomOver(element) {
+  let targetElement = element.target.tagName.toLowerCase();
+  if (targetElement === 'li') {
+    element.target.style.fontSize = 40 + 'px';
+  }
+
+
+}
+
+function zoomOut(element) {
+  element.target.style.fontSize = null;
+}
+
+monthDays.addEventListener('mouseover', zoomOver);
+monthDays.addEventListener('mouseout', zoomOut);

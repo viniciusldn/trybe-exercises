@@ -15,9 +15,10 @@ createDaysOfTheWeek();
 
 // Escreva seu código abaixo.
 // Q1
+const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+
 function createDay() {
   let day;
-  const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
   for (let index = 0; index < dezDaysList.length; index += 1) {
     day = document.createElement('li');
     day.innerText = dezDaysList[index];
@@ -28,7 +29,7 @@ function createDay() {
 
 createDay();
 
-//Q2
+// Q2
 function holidays(string) {
   let btnHoliday = document.createElement('button');
   btnHoliday.innerText = string;
@@ -38,11 +39,11 @@ function holidays(string) {
 
 holidays('Feriados');
 
-//Q3
+// Q3
 document.querySelector('#btn-holiday').addEventListener('click', function() {
   let holidays = document.querySelectorAll('.holiday');
   for (let i = 0; i < holidays.length; i += 1) {
-    if (holidays[i].style.backgroundColor != 'lightgreen') {
+    if (holidays[i].style.backgroundColor !== 'lightgreen') {
       holidays[i].style.backgroundColor = 'lightgreen';
     } else {
       holidays[i].style.backgroundColor = null;
@@ -50,12 +51,28 @@ document.querySelector('#btn-holiday').addEventListener('click', function() {
   }
 });
 
-//Q4
+// Q4
 function fridays(string) {
   let btnFridays = document.createElement('button');
   btnFridays.innerText = string;
-  btnFridays.id = 'btn-holiday';
+  btnFridays.id = 'btn-friday';
   document.querySelector('.buttons-container').appendChild(btnFridays)
 }
 
 fridays('Sexta-feira');
+
+// Q5
+function changeFridays() {
+  let fridays = document.querySelectorAll('.day');
+  let friday = 'Sexta-feira';
+  for (let i = 5; i < fridays.length; i += 7) {
+    if (fridays[i].innerText === friday) {
+      fridays[i].innerText = dezDaysList[i];
+      console.log(fridays[i]);
+    } else {
+      fridays[i].innerText = friday;
+    }
+  }
+}
+
+document.querySelector('#btn-friday').addEventListener('click', changeFridays);

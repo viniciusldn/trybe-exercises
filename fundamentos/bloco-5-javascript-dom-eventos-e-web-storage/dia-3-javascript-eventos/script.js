@@ -97,6 +97,17 @@ monthDays.addEventListener('mouseover', zoomOver);
 monthDays.addEventListener('mouseout', zoomOut);
 
 // Q7
-let newTask = document.createElement('span');
-newTask.className = 'new-task';
-document.querySelector('.my-tasks').appendChild(newTask);
+function newTask(taskName) {
+  let newTask = document.createElement('span');
+  newTask.className = 'new-task';
+  newTask.innerHTML = taskName;
+  document.querySelector('.my-tasks').appendChild(newTask);
+}
+
+// Q8
+function taggedTask(taskColor) {
+  let taggedTask = document.createElement('div');
+  taggedTask.className = 'task';
+  taggedTask.style.backgroundColor = `${taskColor}`;
+  document.querySelector('.my-tasks').appendChild(taggedTask);
+}

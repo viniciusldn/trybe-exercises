@@ -14,3 +14,5 @@ const computeImc = () => {
 };
 
 computeImc();
+
+module.exports = computeImc;

@@ -1,9 +1,8 @@
 const rls = require('readline-sync');
 
-const PESO = rls.questionFloat('Qual seu peso em kilos?\n');
-const ALTURA = rls.questionFloat('Qual sua altura em metros?\n');
-
-const computeImc = (weight, height) => {
+const computeImc = () => {
+  const weight = rls.questionFloat('Qual seu peso em kilos?\n');
+  const height = rls.questionFloat('Qual sua altura em metros?\n');
   const imc = (weight / Math.pow(height, 2).toFixed(2));
 
   if (imc < 18.5) console.log(`IMC: ${imc} - Abaixo do peso (magreza)`);
@@ -14,4 +13,4 @@ const computeImc = (weight, height) => {
   else console.log(`IMC: ${imc} - Obesidade graus III e IV`);
 };
 
-computeImc(PESO,ALTURA);
+computeImc();
